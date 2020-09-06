@@ -13,9 +13,8 @@ st.title('Streamlit with Folium')
 
 df = pd.read_csv('https://raw.githubusercontent.com/Maplub/MonthlyAirQuality/master/sensorlist.csv')
 
-tambol = st.text_input(label='ตำบล')
 
-st.write(df[df['tambol'] == tambol])
+st.write(df)
 
 
 crs = "EPSG:4326"
