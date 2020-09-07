@@ -1,8 +1,8 @@
 mkdir -p ~/.streamlit/
-echo"\
+echo "\
 [general]\n\
-email=\"garavig.t@chula.ac.th\"\n\
-">~/.streamlit/credentials/toml
+email = \"garavig.t@chula.ac.th\"\n\
+" > ~/.streamlit/credentials/toml
 echo "\
 [server]\n\
 port = $PORT\n\
