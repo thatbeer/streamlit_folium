@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run geo.py
+web: sh setup.sh && streamlit run thisisfine.py
