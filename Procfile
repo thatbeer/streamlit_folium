@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run mysle.py
+web: sh setup.sh && streamlit run try.py
