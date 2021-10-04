@@ -65,7 +65,7 @@ row1_1, row1_2 = st.columns((2,3))
 with row1_1:
     st.title("Streamlit with Heroku Bangkok metros using")
     hour_selected = st.slider('Select hour of the interval',0,23)
-    day_selected = st.slider('Select dat of interval',1,5)
+    #day_selected = st.slider('Select dat of interval',1,5)
 
 with row1_2:
     st.write(
@@ -76,8 +76,8 @@ with row1_2:
 
 
 # FILTERING DATA BY HOUR SELECTED
-#data = data[data[DATE_TIME].dt.hour == hour_selected]
-data = data[(data[DATE_TIME].dt.hour == hour_selected) & data[DATE_TIME].dt.day == day_selected]
+data = data[data[DATE_TIME].dt.hour == hour_selected]
+#data = data[(data[DATE_TIME].dt.hour == hour_selected) & data[DATE_TIME].dt.day == day_selected]
 
 # LAYING OUT THE MIDDLE SECTION OF THE APP WITH THE MAPS
 row2_1, row2_2, row2_3 = st.columns((3,1,1))
@@ -89,7 +89,7 @@ zoom_level = 10
 midpoint = (np.average(data["lat"]), np.average(data["lon"]))
 
 with row2_1:
-    st.write("**Bangkok using metros in Day %i:00 from %i:00 and %i:00**" % (day_selected,hour_selected, (hour_selected + 1) % 24))
+    st.write("**Bangkok using metros from %i:00 and %i:00**" % (hour_selected, (hour_selected + 1) % 24))
     map(data, midpoint[0], midpoint[1], 11)
 
 with row2_2:
